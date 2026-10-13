@@ -13,7 +13,7 @@ import { BottleArt, CocktailArt } from "../illustrations/drinks";
 
 export const S11CocktailIntro: React.FC = () => {
   const cue = useCues();
-  const g = cue("gallery", 2);
+  const g = Math.min(cue("gallery", 2), 1.2);
   const { t } = useSceneTime();
   return (
     <AbsoluteFill style={{ background: C.charcoal }}>
@@ -67,9 +67,19 @@ export const S11CocktailIntro: React.FC = () => {
 
 /* ================================================================ S12 / S13 — cocktail groups */
 
-const CocktailColumn: React.FC<{ d: Cocktail; index: number; at: number; width: number; height: number; light: boolean; active: boolean }> = ({
+const CocktailColumn: React.FC<{
+  d: Cocktail;
+  index: number;
+  imageAt: number;
+  at: number;
+  width: number;
+  height: number;
+  light: boolean;
+  active: boolean;
+}> = ({
   d,
   index,
+  imageAt,
   at,
   width,
   height,
@@ -79,7 +89,7 @@ const CocktailColumn: React.FC<{ d: Cocktail; index: number; at: number; width: 
   const p = useReveal(at + 0.3, 0.8);
   return (
     <div style={{ width, display: "flex", flexDirection: "column", alignItems: "center", gap: 22 }}>
-      <DrinkFrame width={width} height={height} at={at} slot={`drink-${index}`} seed={`d${index}`} radius={40} style={{ outline: active ? `3px solid ${C.gold}` : "none", outlineOffset: 6 }}>
+      <DrinkFrame width={width} height={height} at={imageAt} slot={`drink-${index}`} seed={`d${index}`} radius={40} style={{ outline: active ? `3px solid ${C.gold}` : "none", outlineOffset: 6 }}>
         <CocktailArt drink={d} />
       </DrinkFrame>
       <div style={{ opacity: p, translate: `0px ${mix(p, 16, 0)}px`, textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
@@ -112,7 +122,7 @@ export const S12CocktailsA: React.FC = () => {
       </AbsoluteFill>
       <AbsoluteFill style={{ top: 360, display: "flex", flexDirection: "row", justifyContent: "center", gap: 70 }}>
         {group.map((d, i) => (
-          <CocktailColumn key={d.name} d={d} index={i} at={times[i] - 0.2} width={440} height={430} light={false} active={active === i} />
+          <CocktailColumn key={d.name} d={d} index={i} imageAt={0.4 + i * 0.25} at={times[i] - 0.2} width={440} height={430} light={false} active={active === i} />
         ))}
       </AbsoluteFill>
       <Chapter topic="Beverage Menu · Cocktails" index={12} light />
@@ -141,7 +151,7 @@ export const S13CocktailsB: React.FC = () => {
       </AbsoluteFill>
       <AbsoluteFill style={{ top: 300, display: "flex", flexDirection: "row", justifyContent: "center", gap: 46 }}>
         {group.map((d, i) => (
-          <CocktailColumn key={d.name} d={d} index={i + 3} at={times[i] - 0.2} width={370} height={460} light active={active === i} />
+          <CocktailColumn key={d.name} d={d} index={i + 3} imageAt={0.4 + i * 0.25} at={times[i] - 0.2} width={370} height={460} light active={active === i} />
         ))}
       </AbsoluteFill>
       <Chapter topic="Beverage Menu · Cocktails" index={13} light />
@@ -152,18 +162,22 @@ export const S13CocktailsB: React.FC = () => {
 
 /* ================================================================ S14 — Wine, beer, zero-proof & pairings */
 
-const BevTile: React.FC<{ kind: "white" | "red" | "beer" | "spritz"; name: string; price: string; tag?: string; at: number; slot: string }> = ({
-  kind,
-  name,
-  price,
-  tag,
-  at,
-  slot,
-}) => {
+const BevTile: React.FC<{
+  kind: "white" | "red" | "beer" | "spritz";
+  name: string;
+  price: string;
+  tag?: string;
+  at: number;
+  slot: string;
+  activeFrom: number;
+  activeTo: number;
+}> = ({ kind, name, price, tag, at, slot, activeFrom, activeTo }) => {
   const p = useReveal(at, 0.8);
+  const { t } = useSceneTime();
+  const active = t >= activeFrom && t < activeTo;
   return (
     <div style={{ width: 330, display: "flex", gap: 18, alignItems: "center", opacity: p, translate: `0px ${mix(p, 30, 0)}px` }}>
-      <div style={{ width: 130, height: 190, flexShrink: 0, borderRadius: 26, overflow: "hidden", position: "relative", background: C.forestDeep, border: `4px solid ${C.ivory}` }}>
+      <div style={{ width: 130, height: 190, flexShrink: 0, borderRadius: 26, overflow: "hidden", position: "relative", background: C.forestDeep, border: `4px solid ${active ? C.gold : C.ivory}` }}>
         <Visual slot={slot}>
           <Texture kind="slate" />
           <AbsoluteFill style={{ padding: 10 }}>
@@ -182,7 +196,8 @@ const BevTile: React.FC<{ kind: "white" | "red" | "beer" | "spritz"; name: strin
 
 export const S14Variety: React.FC = () => {
   const cue = useCues();
-  const pair = cue("pairings", 14);
+  const pair = 3.2;
+  const tt = [cue("i0", 3), cue("i1", 6), cue("i2", 8.5), cue("i3", 10), cue("pairings", 14)];
   return (
     <AbsoluteFill style={{ background: C.charcoal }}>
       <Texture kind="slate" />
@@ -190,10 +205,10 @@ export const S14Variety: React.FC = () => {
         <Heading script="Beyond" serif="Cocktails" at={0.2} color={C.ivory} scriptColor={C.goldSoft} />
         <div style={{ height: 56 }} />
         <div style={{ display: "flex", flexWrap: "wrap", columnGap: 50, rowGap: 46 }}>
-          <BevTile kind="white" name={WINES[0].name} price={`$${WINES[0].glass} glass · $${WINES[0].bottle} bottle`} tag="WHITE WINE" at={cue("i0", 3)} slot="wine-white" />
-          <BevTile kind="red" name={WINES[1].name} price={`$${WINES[1].glass} glass · $${WINES[1].bottle} bottle`} tag="RED WINE" at={cue("i1", 6)} slot="wine-red" />
-          <BevTile kind="beer" name={BEER.name} price={`$${BEER.price}`} tag="BEER" at={cue("i2", 8.5)} slot="beer" />
-          <BevTile kind="spritz" name={ZERO_PROOF.name} price={`$${ZERO_PROOF.price}`} tag="ZERO-PROOF" at={cue("i3", 10)} slot="zero-proof" />
+          <BevTile kind="white" name={WINES[0].name} price={`$${WINES[0].glass} glass · $${WINES[0].bottle} bottle`} tag="WHITE WINE" at={Math.min(cue("i0", 3), 0.6)} slot="wine-white" activeFrom={tt[0]} activeTo={tt[1]} />
+          <BevTile kind="red" name={WINES[1].name} price={`$${WINES[1].glass} glass · $${WINES[1].bottle} bottle`} tag="RED WINE" at={Math.min(cue("i1", 6), 0.9)} slot="wine-red" activeFrom={tt[1]} activeTo={tt[2]} />
+          <BevTile kind="beer" name={BEER.name} price={`$${BEER.price}`} tag="BEER" at={Math.min(cue("i2", 8.5), 1.2)} slot="beer" activeFrom={tt[2]} activeTo={tt[3]} />
+          <BevTile kind="spritz" name={ZERO_PROOF.name} price={`$${ZERO_PROOF.price}`} tag="ZERO-PROOF" at={Math.min(cue("i3", 10), 1.5)} slot="zero-proof" activeFrom={tt[3]} activeTo={tt[4]} />
         </div>
       </AbsoluteFill>
       <ArcPanel side="right" width={0.43} texture="paper" at={0.2}>
@@ -204,7 +219,7 @@ export const S14Variety: React.FC = () => {
           <div style={{ height: 30 }} />
           <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
             {PAIRINGS.map(([drink, food], i) => (
-              <Reveal key={drink} at={pair - 0.4 + i * 0.3} x={24} y={0}>
+              <Reveal key={drink} at={pair - 0.4 + i * 0.6} x={24} y={0}>
                 <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                   <div style={{ fontFamily: F.serif, fontSize: 30, color: C.ink }}>{drink}</div>
                   <div style={{ display: "flex", alignItems: "center", gap: 12, fontFamily: F.serif, fontStyle: "italic", fontSize: 25, color: C.muted }}>
@@ -216,7 +231,7 @@ export const S14Variety: React.FC = () => {
             ))}
           </div>
           <div style={{ height: 26 }} />
-          <Footnote at={pair + 2}>Zero-proof spritz: an option for guests who skip alcohol.</Footnote>
+          <Footnote at={cue("pairings", 14)}>Zero-proof spritz: an option for guests who skip alcohol.</Footnote>
         </AbsoluteFill>
       </ArcPanel>
       <Chapter topic="Beverage Menu · Wine, Beer & Zero-Proof" index={14} light counterLight={false} />

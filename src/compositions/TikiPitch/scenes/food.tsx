@@ -33,7 +33,7 @@ export const S06Appetizers: React.FC = () => {
         {APPETIZERS.map((item, i) => (
           <div key={item.name} style={{ width: 520, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
             <div>
-              <DishFrame width={520} height={270} at={times[i] - 0.15} slot={`dish-${item.dish}`} radius={36} dishScale={1.05}>
+              <DishFrame width={520} height={270} at={0.3 + i * 0.18} slot={`dish-${item.dish}`} radius={36} dishScale={1.05}>
                 <Dish kind={item.dish} />
               </DishFrame>
             </div>
@@ -163,8 +163,9 @@ export const S08Mains: React.FC = () => {
 
 /* ================================================================ S09 — Desserts */
 
-const DessertCard: React.FC<{ item: MenuItem; at: number; active: boolean }> = ({ item, at, active }) => {
+const DessertCard: React.FC<{ item: MenuItem; at: number; captionAt: number; active: boolean }> = ({ item, at, captionAt, active }) => {
   const p = useReveal(at, 0.9);
+  const pc = useReveal(captionAt, 0.6);
   return (
     <div
       style={{
@@ -189,11 +190,11 @@ const DessertCard: React.FC<{ item: MenuItem; at: number; active: boolean }> = (
           </AbsoluteFill>
         </Visual>
       </div>
-      <div style={{ padding: "26px 10px 18px", display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+      <div style={{ padding: "26px 10px 18px", display: "flex", flexDirection: "column", alignItems: "center", gap: 16, opacity: pc }}>
         <div style={{ fontFamily: F.serif, fontSize: 31, color: C.ink, textAlign: "center", lineHeight: 1.15, height: 72, display: "flex", alignItems: "center" }}>
           {item.name}
         </div>
-        <PricePill at={at + 0.3} size={28}>
+        <PricePill at={captionAt + 0.2} size={28}>
           ${item.price}
         </PricePill>
       </div>
@@ -222,7 +223,7 @@ export const S09Desserts: React.FC = () => {
       </AbsoluteFill>
       <AbsoluteFill style={{ top: 380, display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "flex-start", gap: 40 }}>
         {DESSERTS.map((d, i) => (
-          <DessertCard key={d.name} item={d} at={times[i] - 0.2} active={active === i} />
+          <DessertCard key={d.name} item={d} at={0.4 + i * 0.25} captionAt={times[i]} active={active === i} />
         ))}
       </AbsoluteFill>
       <Chapter topic="Food Menu · Desserts" index={9} light />
@@ -317,11 +318,11 @@ export const S10Strategy: React.FC = () => {
         </div>
       </AbsoluteFill>
       <AbsoluteFill style={{ left: 930, top: 190, width: 900 }}>
-        <Eyebrow at={cue("prices", 12) - 0.3} color={C.gold}>
+        <Eyebrow at={1.4} color={C.gold}>
           Menu price range
         </Eyebrow>
         <div style={{ height: 30 }} />
-        <RangeBars at={cue("prices", 12)} />
+        <RangeBars at={1.8} />
         <div style={{ height: 40 }} />
         <div style={{ display: "flex", gap: 26 }}>
           {(["shrimp", "fishTacos", "cremeBrulee"] as const).map((d, i) => (
