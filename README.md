@@ -12,7 +12,8 @@ background music and subtle sound design.
 
 | Deliverable | Path |
 |---|---|
-| Final video | `out/tiki-tiki-pitch.mp4` (render with `npm run render:pitch`) |
+| Final video | [`deliverables/tiki-tiki-pitch.mp4`](deliverables/tiki-tiki-pitch.mp4) (77 MB; re-render to `out/` with `npm run render:pitch`) |
+| Verification results | [`docs/VERIFICATION.md`](docs/VERIFICATION.md) |
 | Narration script with timestamps | [`docs/NARRATION_SCRIPT.md`](docs/NARRATION_SCRIPT.md) |
 | Full menu, financial calculations, staffing plan, unresolved items | [`docs/SUPPORTING_NOTES.md`](docs/SUPPORTING_NOTES.md) |
 | Reference-video analysis | [`docs/REFERENCE_ANALYSIS.md`](docs/REFERENCE_ANALYSIS.md) |
