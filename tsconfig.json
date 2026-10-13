@@ -6,12 +6,19 @@
     "jsx": "react-jsx",
     "strict": true,
     "noEmit": true,
-    "lib": ["es2017"],
+    "lib": [
+      "es2017"
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "resolveJsonModule": true
   },
-  "include": ["src"],
-  "exclude": ["remotion.config.ts"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "remotion.config.ts"
+  ]
 }

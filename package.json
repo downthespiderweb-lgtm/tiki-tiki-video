@@ -15,7 +15,13 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "format": "prettier --write src scripts"
+    "format": "prettier --write src scripts",
+    "render:pitch": "remotion render TikiPitch out/tiki-tiki-pitch.mp4",
+    "preview:pitch": "remotion render TikiPitch out/preview-halfres.mp4 --scale=0.5 --crf=26",
+    "verify:pitch": "python3 scripts/verify_video.py out/tiki-tiki-pitch.mp4",
+    "audio:narration": "python3 audio-src/generate_narration.py && python3 scripts/export_script.py",
+    "audio:mix": "python3 audio-src/build_audio.py",
+    "textures": "python3 scripts/generate_textures.py"
   },
   "engines": {
     "node": ">=18"

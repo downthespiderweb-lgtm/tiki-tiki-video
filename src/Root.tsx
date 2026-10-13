@@ -7,6 +7,9 @@ import {
 } from "./compositions/Showcase";
 import { VIDEO } from "./config/video";
 import { fontsLoaded } from "./fonts";
+import { Library } from "./compositions/TikiPitch/Library";
+import { PitchVideo } from "./compositions/TikiPitch/PitchVideo";
+import { PITCH, TOTAL_FRAMES } from "./compositions/TikiPitch/config";
 // new-composition:imports (`npm run new` inserts imports above this line)
 
 // Start loading bundled fonts as soon as the bundle is evaluated.
@@ -24,6 +27,15 @@ void fontsLoaded;
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="TikiPitch"
+        component={PitchVideo}
+        width={PITCH.width}
+        height={PITCH.height}
+        fps={PITCH.fps}
+        durationInFrames={TOTAL_FRAMES}
+        defaultProps={{ audioSrc: "audio/tiki-pitch-mix.mp3" }}
+      />
       <Composition
         id="Showcase"
         component={Showcase}
@@ -58,6 +70,15 @@ export const RemotionRoot: React.FC = () => {
           accent: "#ff7a45",
           audioSrc: "",
         }}
+      />
+      <Composition
+        id="PitchLibrary"
+        component={Library}
+        width={1920}
+        height={1080}
+        fps={30}
+        durationInFrames={30}
+        defaultProps={{ page: "food" as const }}
       />
       {/* new-composition:register (`npm run new` inserts compositions above this line) */}
     </>

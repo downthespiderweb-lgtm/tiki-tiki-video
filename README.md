@@ -4,6 +4,43 @@ Tiki Tiki Lounge hospitality presentation video
 Built with [Remotion](https://www.remotion.dev/docs) 4.0.535: videos are written as React
 components, previewed in Remotion Studio and rendered to MP4.
 
+## The pitch video (hospitality class assignment)
+
+**Composition `TikiPitch`** — a PechaKucha-style food & beverage concept sales pitch:
+20 scenes × 20 s = **6:40** (12,000 frames, 1920×1080, 30 fps) with narration, original
+background music and subtle sound design.
+
+| Deliverable | Path |
+|---|---|
+| Final video | `out/tiki-tiki-pitch.mp4` (render with `npm run render:pitch`) |
+| Narration script with timestamps | [`docs/NARRATION_SCRIPT.md`](docs/NARRATION_SCRIPT.md) |
+| Full menu, financial calculations, staffing plan, unresolved items | [`docs/SUPPORTING_NOTES.md`](docs/SUPPORTING_NOTES.md) |
+| Reference-video analysis | [`docs/REFERENCE_ANALYSIS.md`](docs/REFERENCE_ANALYSIS.md) |
+| Asset sources & licenses / adding real photos | [`docs/ASSETS_AND_LICENSES.md`](docs/ASSETS_AND_LICENSES.md) |
+| Scenes & components | `src/compositions/TikiPitch/` |
+| Audio generation (Python) | `audio-src/generate_narration.py`, `audio-src/build_audio.py` |
+
+```bash
+npm run dev                 # preview in Remotion Studio → select "TikiPitch"
+npm run preview:pitch       # quick half-resolution MP4
+npm run render:pitch        # final 1920×1080 MP4 → out/tiki-tiki-pitch.mp4
+npm run verify:pitch        # checks 12,000 frames / 400 s / 1080p / 30 fps / audio
+```
+
+Regenerating audio (optional; the mixed soundtrack is committed at
+`public/audio/tiki-pitch-mix.mp3`):
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r audio-src/requirements.txt
+# download the Kokoro model files into audio-src/models/ (URLs in generate_narration.py)
+.venv/bin/python audio-src/generate_narration.py   # narration + cue timings
+.venv/bin/python audio-src/build_audio.py          # music, sfx, final mix (-16 LUFS)
+python3 scripts/export_script.py                   # refresh docs/NARRATION_SCRIPT.md
+```
+
+Edit text/timing: narration in `narration/script.json`; menu, beverage, financial and staffing
+data in `src/compositions/TikiPitch/data/`; scene length/fps in `src/compositions/TikiPitch/config.ts`.
+
 ## Quick start
 
 ```bash

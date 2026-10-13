@@ -9,6 +9,16 @@ import { FONTS } from "./config/theme";
  */
 const fontFiles = [
   { family: FONTS.body, file: "fonts/Inter-400.woff2", weight: "400" },
+  { family: FONTS.body, file: "fonts/Inter-500.woff2", weight: "500" },
+  { family: FONTS.body, file: "fonts/Inter-700.woff2", weight: "700" },
+  { family: FONTS.display, file: "fonts/PlayfairDisplay-400.woff2", weight: "400" },
+  {
+    family: FONTS.display,
+    file: "fonts/PlayfairDisplay-400-italic.woff2",
+    weight: "400",
+    style: "italic",
+  },
+  { family: FONTS.script, file: "fonts/GreatVibes-400.woff2", weight: "400" },
   { family: FONTS.body, file: "fonts/Inter-600.woff2", weight: "600" },
   { family: FONTS.body, file: "fonts/Inter-800.woff2", weight: "800" },
   {

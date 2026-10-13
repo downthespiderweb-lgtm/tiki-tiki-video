@@ -20,6 +20,29 @@ Remotion's official Agent Skills are installed in `.agents/skills/remotion-best-
 
 Reinstall / update skills with `npx skills add remotion-dev/skills` (or the `remotion-upgrade` skill).
 
+## Main project: TikiPitch (graded PechaKucha video)
+
+`src/compositions/TikiPitch/` — 20 scenes × 20 s, 1920×1080, 30 fps (12,000 frames). Rules:
+
+- **Never change scene count or scene length** (`config.ts`: 20 × 20 s). Transitions are centred on
+  each boundary (`sequenceFrames()` / `sceneLeadFrames()`), so scene time `t` from `useSceneTime()`
+  is 0 exactly at the 20 s boundary. Every scene must render for its full 600 frames.
+- **Facts live in `data/`** (`menu.ts`, `beverages.ts`, `financials.ts`, `staffing.ts`). Names and
+  prices are exact from the brief — never retype them in scenes. `financials.ts` throws if the
+  brief's percentages stop adding up. Never invent figures; label anything derived/hypothetical.
+- **Narration drives timing.** `narration/script.json` → `audio-src/generate_narration.py`
+  writes per-phrase cue times to `data/cues.generated.json`; scenes reveal elements with
+  `useCues()(cueName)`. After editing narration: regenerate narration, `build_audio.py`, and
+  `scripts/export_script.py`.
+- **Visuals**: original SVG illustrations (`illustrations/`) behind photo slots (`photos.ts`,
+  `<Visual slot>`). Brand tokens in `brand.ts` (cream / charcoal / forest / restrained gold);
+  chart colours `CH` are palette-validated — reuse them.
+- **Layout gotcha:** `AbsoluteFill` is `width/height: 100%` — when you offset it with `left`, also
+  set an explicit `width` (and `height` if you align to the bottom), otherwise content overflows.
+- QA: render key frames with
+  `npx remotion render TikiPitch out/frames --sequence --frames=480,1080 --image-format=jpeg --props='{"audioSrc":""}'`
+  and look at them; then `npm run render:pitch && npm run verify:pitch`.
+
 ## Project layout
 
 ```

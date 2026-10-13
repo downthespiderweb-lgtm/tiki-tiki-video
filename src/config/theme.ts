@@ -14,4 +14,6 @@ export const COLORS = {
 export const FONTS = {
   display: "Playfair Display",
   body: "Inter",
+  /** Decorative script — use sparingly, for short section headings only. */
+  script: "Great Vibes",
 } as const;

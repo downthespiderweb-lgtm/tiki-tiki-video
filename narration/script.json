@@ -1,0 +1,562 @@
+{
+  "voice": "af_heart",
+  "notes": "Each scene is exactly 20 s. `text` is the on-script wording; `tts` (optional) is the spelled-out version sent to the speech model. `cue` ids are used by the Remotion scenes to time visual reveals to the narration.",
+  "scenes": [
+    {
+      "id": "s01",
+      "title": "Opening identity",
+      "section": "Concept Statement",
+      "phrases": [
+        {
+          "text": "Welcome to Tiki Tiki Lounge & Bar,",
+          "tts": "Welcome to Tiki Tiki Lounge and Bar,",
+          "cue": "title"
+        },
+        {
+          "text": "a tropical restaurant and lounge planned for Pacific Beach, San Diego.",
+          "cue": "location"
+        },
+        {
+          "text": "Picture warm wood, glowing lights, an ocean breeze, and a central tiki bar.",
+          "cue": "picture"
+        },
+        {
+          "text": "We'll walk you through our concept, guests, menus, financials, and team.",
+          "cue": "agenda"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "title": "Concept statement",
+      "section": "Concept Statement",
+      "phrases": [
+        {
+          "text": "Our concept combines coastal, Baja-influenced food,",
+          "cue": "food"
+        },
+        {
+          "text": "creative tropical cocktails,",
+          "cue": "drinks"
+        },
+        {
+          "text": "live entertainment, and a relaxed social atmosphere.",
+          "cue": "music"
+        },
+        {
+          "text": "What makes it distinctive is the whole experience in one place.",
+          "cue": "distinct"
+        },
+        {
+          "text": "We believe Pacific Beach fits, because its beach lifestyle and social energy suit a fun, tropical concept.",
+          "cue": "location"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "title": "Atmosphere and experience",
+      "section": "Concept Statement",
+      "phrases": [
+        {
+          "text": "Inside, a large island-style tiki bar anchors the room, so guests gather from every side.",
+          "cue": "bar"
+        },
+        {
+          "text": "Warm wood finishes, tropical decor, and lush greenery set the mood.",
+          "cue": "wood"
+        },
+        {
+          "text": "Comfortable booths suit groups,",
+          "cue": "booths"
+        },
+        {
+          "text": "a small stage hosts live music,",
+          "cue": "stage"
+        },
+        {
+          "text": "and an outdoor patio opens it all to the coastal air.",
+          "cue": "patio"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "title": "Guest demographics",
+      "section": "Guest Demographics & Psychographics",
+      "phrases": [
+        {
+          "text": "Our primary target market is adults ages 21 to 35.",
+          "tts": "Our primary target market is adults ages twenty-one to thirty-five.",
+          "cue": "age"
+        },
+        {
+          "text": "We expect college students and young adults, young professionals, couples on dates,",
+          "cue": "seg1"
+        },
+        {
+          "text": "groups of friends, local San Diego residents, and tourists.",
+          "cue": "seg2"
+        },
+        {
+          "text": "These are target-market assumptions, not verified statistics.",
+          "cue": "assumption"
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "title": "Guest psychographics",
+      "section": "Guest Demographics & Psychographics",
+      "phrases": [
+        {
+          "text": "Our guests enjoy socializing, attractive tropical spaces, and memorable dining and nightlife.",
+          "cue": "m1"
+        },
+        {
+          "text": "They want creative drinks, distinctive food, live music, outdoor seating, and places worth sharing.",
+          "cue": "m2"
+        },
+        {
+          "text": "Casual gatherings, date nights, and nights out all fit,",
+          "cue": "occasions"
+        },
+        {
+          "text": "because our space, menu, and drinks are built for time together.",
+          "cue": "why"
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "title": "Appetizers",
+      "section": "Food Menu",
+      "phrases": [
+        {
+          "text": "Appetizers are built for sharing.",
+          "cue": "intro"
+        },
+        {
+          "text": "Crispy Baja Shrimp, $16.",
+          "tts": "Crispy Baja Shrimp, sixteen dollars.",
+          "cue": "i0"
+        },
+        {
+          "text": "Tiki Tuna Poke, $17.",
+          "tts": "Tiki Tuna Poke, seventeen.",
+          "cue": "i1"
+        },
+        {
+          "text": "Pineapple Chicken Skewers, $15.",
+          "tts": "Pineapple Chicken Skewers, fifteen.",
+          "cue": "i2"
+        },
+        {
+          "text": "Coconut Crab Cakes, $18.",
+          "tts": "Coconut Crab Cakes, eighteen.",
+          "cue": "i3"
+        },
+        {
+          "text": "Street Corn Dip, $13.",
+          "tts": "Street Corn Dip, thirteen.",
+          "cue": "i4"
+        },
+        {
+          "text": "And Tropical Calamari, $16.",
+          "tts": "And Tropical Calamari, sixteen.",
+          "cue": "i5"
+        },
+        {
+          "text": "Together, they start the table with coastal flavor at approachable prices.",
+          "cue": "outro"
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "title": "Seafood and Baja-inspired mains",
+      "section": "Food Menu",
+      "phrases": [
+        {
+          "text": "Seafood leads our main plates.",
+          "cue": "intro"
+        },
+        {
+          "text": "Baja Fish Tacos, $22.",
+          "tts": "Baja Fish Tacos, twenty-two dollars.",
+          "cue": "i0"
+        },
+        {
+          "text": "Coconut Curry Salmon, $27.",
+          "tts": "Coconut Curry Salmon, twenty-seven.",
+          "cue": "i1"
+        },
+        {
+          "text": "Poke Rice Bowl, $23.",
+          "tts": "Poke Rice Bowl, twenty-three.",
+          "cue": "i2"
+        },
+        {
+          "text": "Baja Shrimp Pasta, $25.",
+          "tts": "Baja Shrimp Pasta, twenty-five.",
+          "cue": "i3"
+        },
+        {
+          "text": "And Seared Halibut, $30.",
+          "tts": "And Seared Halibut, thirty.",
+          "cue": "i4"
+        },
+        {
+          "text": "Shrimp, tuna, crab, and calamari starters carry the same fresh Pacific direction.",
+          "cue": "outro"
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "title": "Other main plates",
+      "section": "Food Menu",
+      "phrases": [
+        {
+          "text": "For guests who prefer land, the Island Burger is $21,",
+          "tts": "For guests who prefer land, the Island Burger is twenty-one dollars,",
+          "cue": "i0"
+        },
+        {
+          "text": "Mango Glazed Chicken and the Jerk Chicken Plate are $24 each,",
+          "tts": "Mango Glazed Chicken and the Jerk Chicken Plate are twenty-four each,",
+          "cue": "i1"
+        },
+        {
+          "text": "and Pacific Rim Steak is $29.",
+          "tts": "and Pacific Rim Steak is twenty-nine.",
+          "cue": "i3"
+        },
+        {
+          "text": "Our Tiki Tiki Surf & Turf, at $34, is the premium signature plate,",
+          "tts": "Our Tiki Tiki Surf and Turf, at thirty-four, is the premium signature plate,",
+          "cue": "i4"
+        },
+        {
+          "text": "so every guest in a group finds a favorite.",
+          "cue": "outro"
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "title": "Desserts",
+      "section": "Food Menu",
+      "phrases": [
+        {
+          "text": "Desserts finish the night on a tropical note.",
+          "cue": "intro"
+        },
+        {
+          "text": "Coconut Crème Brûlée, $10.",
+          "tts": "Coconut creme brulee, ten dollars.",
+          "cue": "i0"
+        },
+        {
+          "text": "Mango-Lime Cheesecake, $11.",
+          "tts": "Mango lime cheesecake, eleven.",
+          "cue": "i1"
+        },
+        {
+          "text": "Pineapple Upside-Down Cake, $10.",
+          "tts": "Pineapple upside-down cake, ten.",
+          "cue": "i2"
+        },
+        {
+          "text": "And Passion Fruit Tart, $11.",
+          "tts": "And passion fruit tart, eleven.",
+          "cue": "i3"
+        },
+        {
+          "text": "Coconut, mango, pineapple, and passion fruit tie dessert to our identity and invite guests to linger.",
+          "cue": "outro"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "title": "Food strategy",
+      "section": "Food Menu",
+      "phrases": [
+        {
+          "text": "Our food strategy is coastal and Baja-inspired, built on seafood and fresh flavors.",
+          "cue": "k0"
+        },
+        {
+          "text": "Chicken, steak, burgers, and rice bowls add variety,",
+          "cue": "k1"
+        },
+        {
+          "text": "and tropical fruit and coconut appear throughout.",
+          "cue": "k2"
+        },
+        {
+          "text": "Appetizers run $13 to $18, mains $21 to $34, and desserts $10 to $11.",
+          "tts": "Appetizers run thirteen to eighteen dollars, mains twenty-one to thirty-four, and desserts ten to eleven.",
+          "cue": "prices"
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "title": "Signature cocktail program",
+      "section": "Beverage Menu",
+      "phrases": [
+        {
+          "text": "Now, the bar.",
+          "cue": "intro"
+        },
+        {
+          "text": "Seven signature cocktails use rum, tequila, mezcal, and bourbon with mango, pineapple, passion fruit, and guava.",
+          "cue": "gallery"
+        },
+        {
+          "text": "They are the clearest expression of our tropical identity.",
+          "cue": "identity"
+        },
+        {
+          "text": "Alcohol is served responsibly, only to guests 21 and over, in line with our licensing requirements.",
+          "tts": "Alcohol is served responsibly, only to guests twenty-one and over, in line with our licensing requirements.",
+          "cue": "responsible"
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "title": "Cocktails: Mai Tai, Margarita, Mezcal Sour",
+      "section": "Beverage Menu",
+      "phrases": [
+        {
+          "text": "The Baja Mai Tai, $17, blends Appleton Estate and Planteray rums with curaçao, orgeat, lime, and pineapple.",
+          "tts": "The Baja Mai Tai, seventeen dollars, blends Appleton Estate and Planteray rums with curaçao, orgeat, lime, and pineapple.",
+          "cue": "i0"
+        },
+        {
+          "text": "The Mango Margarita, $16, pairs Cazadores Blanco with mango, lime, agave, and Tajín.",
+          "tts": "The Mango Margarita, sixteen, pairs Cazadores Blanco with mango, lime, agave, and Tajín.",
+          "cue": "i1"
+        },
+        {
+          "text": "The Passion Fruit Mezcal Sour, $18, adds Montelobos mezcal and chili bitters.",
+          "tts": "The Passion Fruit Mezcal Sour, eighteen, adds Montelobos mezcal and chili bitters.",
+          "cue": "i2"
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "title": "Cocktails: Mojito, Cooler, Paloma, Old Fashioned",
+      "section": "Beverage Menu",
+      "phrases": [
+        {
+          "text": "Pineapple Mojito, $15, with Bacardi Superior, mint, and lime.",
+          "tts": "Pineapple Mojito, fifteen dollars, with Bacardi Superior, mint, and lime.",
+          "cue": "i0"
+        },
+        {
+          "text": "Coconut Rum Cooler, $16, with Planteray rum and coconut water.",
+          "tts": "Coconut Rum Cooler, sixteen, with Planteray rum and coconut water.",
+          "cue": "i1"
+        },
+        {
+          "text": "Guava Paloma, $16, with Espolòn Blanco and grapefruit.",
+          "tts": "Guava Paloma, sixteen, with Espolòn Blanco and grapefruit.",
+          "cue": "i2"
+        },
+        {
+          "text": "And the Tropical Old Fashioned, $17, with Four Roses bourbon and pineapple demerara.",
+          "tts": "And the Tropical Old Fashioned, seventeen, with Four Roses bourbon and pineapple demerara.",
+          "cue": "i3"
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "title": "Wine, beer, zero-proof and pairings",
+      "section": "Beverage Menu",
+      "phrases": [
+        {
+          "text": "Familiar choices balance the list.",
+          "cue": "intro"
+        },
+        {
+          "text": "Kim Crawford Sauvignon Blanc is $12 a glass or $44 a bottle,",
+          "tts": "Kim Crawford Sauvignon Blanc is twelve dollars a glass or forty-four a bottle,",
+          "cue": "i0"
+        },
+        {
+          "text": "La Crema Pinot Noir $13 or $48,",
+          "tts": "La Crema Pinot Noir thirteen or forty-eight,",
+          "cue": "i1"
+        },
+        {
+          "text": "Pacifico Clara $8,",
+          "tts": "Pacifico Clara eight,",
+          "cue": "i2"
+        },
+        {
+          "text": "and the zero-proof Lyre's Classico Spritz $10.",
+          "tts": "and the zero-proof Lyre's Classico Spritz ten.",
+          "cue": "i3"
+        },
+        {
+          "text": "Pairings include Mango Margaritas with fish tacos, and pinot noir with steak.",
+          "cue": "pairings"
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "title": "Financial overview",
+      "section": "Financials",
+      "phrases": [
+        {
+          "text": "Our preliminary estimates assume a 3,000-square-foot restaurant",
+          "tts": "Our preliminary estimates assume a three-thousand-square-foot restaurant",
+          "cue": "size"
+        },
+        {
+          "text": "with a $1.5 million annual sales target.",
+          "tts": "with a one point five million dollar annual sales target.",
+          "cue": "sales"
+        },
+        {
+          "text": "$450,000 of that is assumed beverage sales, part of the total, not extra revenue,",
+          "tts": "Four hundred fifty thousand of that is assumed beverage sales, part of the total, not extra revenue,",
+          "cue": "bev"
+        },
+        {
+          "text": "leaving about $1.05 million from food.",
+          "tts": "leaving about one point zero five million from food.",
+          "cue": "food"
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "title": "Operating costs",
+      "section": "Financials",
+      "phrases": [
+        {
+          "text": "Labor is our largest estimate, at 36.5% of sales.",
+          "tts": "Labor is our largest estimate, at thirty-six point five percent of sales.",
+          "cue": "labor"
+        },
+        {
+          "text": "Food cost is 32% of sales, and rent is $200,000 a year.",
+          "tts": "Food cost is thirty-two percent of sales, and rent is two hundred thousand dollars a year.",
+          "cue": "food"
+        },
+        {
+          "text": "Alcohol cost is 25% of beverage sales.",
+          "tts": "Alcohol cost is twenty-five percent of beverage sales.",
+          "cue": "alcohol"
+        },
+        {
+          "text": "Utilities, card fees, manager salary, insurance, licenses, and POS round it out.",
+          "cue": "rest"
+        }
+      ]
+    },
+    {
+      "id": "s17",
+      "title": "Financial viability",
+      "section": "Financials",
+      "phrases": [
+        {
+          "text": "Together, listed costs total about $1.51 million, $5,500 more than projected sales.",
+          "tts": "Together, listed costs total about one point five one million dollars, fifty-five hundred more than projected sales.",
+          "cue": "total"
+        },
+        {
+          "text": "If the manager's salary is already in labor, removing it leaves about $46,500.",
+          "tts": "If the manager's salary is already in labor, removing it leaves about forty-six thousand.",
+          "cue": "double"
+        },
+        {
+          "text": "That isn't verified profit, and repairs, marketing, supplies, waste, and taxes are missing.",
+          "cue": "missing"
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "title": "Talent acquisition",
+      "section": "Talent Acquisition",
+      "phrases": [
+        {
+          "text": "A general manager leads our proposed team.",
+          "cue": "gm"
+        },
+        {
+          "text": "A head chef leads line and prep cooks and dish support.",
+          "cue": "kitchen"
+        },
+        {
+          "text": "Bartenders run the central bar, while servers, hosts, and bussers or runners care for guests.",
+          "cue": "service"
+        },
+        {
+          "text": "Musicians are booked as needed.",
+          "cue": "music"
+        },
+        {
+          "text": "Skilled, well-scheduled staff protect service, food quality, guest satisfaction, and profit.",
+          "cue": "impact"
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "title": "Recruiting, training and retention",
+      "section": "Talent Acquisition",
+      "phrases": [
+        {
+          "text": "We'll recruit through culinary schools, job boards, referrals, and local networks,",
+          "cue": "recruit"
+        },
+        {
+          "text": "and hire with clear job descriptions, structured interviews, skill tests, and references,",
+          "cue": "select"
+        },
+        {
+          "text": "then train menus, food safety, service, teamwork, safety, and responsible alcohol service.",
+          "cue": "train"
+        },
+        {
+          "text": "Fair schedules, respect, cross-training, and growth keep them.",
+          "cue": "retain"
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "title": "Closing",
+      "section": "Closing",
+      "phrases": [
+        {
+          "text": "Tiki Tiki Lounge & Bar offers a tropical, social escape for guests 21 to 35.",
+          "tts": "Tiki Tiki Lounge and Bar offers a tropical, social escape for guests twenty-one to thirty-five.",
+          "cue": "appeal"
+        },
+        {
+          "text": "The numbers are tight, so success depends on validating sales and costs with real quotes,",
+          "cue": "numbers"
+        },
+        {
+          "text": "and controlling food, labor, and rent.",
+          "cue": "control"
+        },
+        {
+          "text": "Mahalo, and thank you.",
+          "cue": "thanks"
+        }
+      ]
+    }
+  ]
+}
