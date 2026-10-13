@@ -1,0 +1,43 @@
+{
+  "name": "tiki-tiki-video",
+  "version": "1.0.0",
+  "description": "Tiki Tiki Lounge hospitality presentation video, built with Remotion",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "remotion studio",
+    "studio": "remotion studio",
+    "render": "remotion render Showcase out/showcase.mp4",
+    "render:draft": "remotion render Showcase out/showcase-draft.mp4 --scale=0.5 --crf=28",
+    "still": "remotion still Showcase out/showcase.png --frame=60",
+    "new": "node scripts/new-composition.mjs",
+    "compositions": "remotion compositions",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc",
+    "format": "prettier --write src scripts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.535",
+    "@remotion/fonts": "4.0.535",
+    "@remotion/media": "4.0.535",
+    "@remotion/shapes": "4.0.535",
+    "@remotion/transitions": "4.0.535",
+    "@remotion/zod-types": "4.0.535",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.535",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.535",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.39.5",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  }
+}
